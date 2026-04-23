@@ -16,29 +16,29 @@ int isSafe(int maze[N][N], int x, int y) {
 
 void printMaze(int maze[N][N]){
     printf("Caminho no labirinto:\n");
-    printf("%c ",219);
+    printf("%c ",'#');
     for (int j = 1; j < N+1; j++) {
-        printf("%c",219);
+        printf("%c",'#');
     }
     printf("\n");
     for (int i = 0; i < N; i++) {
-        printf("%c",219);
+        printf("%c",'#');
         for (int j = 0; j < N; j++) {
             if(maze[i][j] == 1){
-                printf("%c",219);
+                printf("%c",'#');
             }else if(maze[i][j] == 2){
-                printf("%c", 248);
+                printf("%c", 'O');
             }else{
                 printf(" ");
             }
             //printf("%d ", maze[i][j]);
         }
-        printf("%c\n",219);
+        printf("%c\n",'#');
     }
     for (int j = 0; j < N; j++) {
-        printf("%c",219);
+        printf("%c",'#');
     }
-    printf(" %c\n",219);
+    printf(" %c\n",'#');
 }
 
 int solveMazeUtil(int maze[N][N], int x, int y) {
@@ -76,7 +76,6 @@ int solveMazeUtil(int maze[N][N], int x, int y) {
 
 int solveMaze(int maze[N][N]) {
     // Iniciar a busca a partir do ponto de partida (0, 0)
-    // Descomentei a chamada da função utilitária:
     if (solveMazeUtil(maze, 0, 0) == 0) {
         printf("Nao ha solucao para o labirinto.\n");
         return 0;
